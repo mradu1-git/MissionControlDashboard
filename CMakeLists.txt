@@ -18,6 +18,7 @@ qt_add_qml_module(appMissionControlDashboard
         Main.qml
         SOURCES vehicle.h vehicle.cpp
         SOURCES vehiclemodel.h vehiclemodel.cpp
+        SOURCES missioncontroller.h missioncontroller.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
