@@ -8,7 +8,7 @@ ApplicationWindow {
     width: 900
     height: 600
     title: "Mission Control Dashboard"
-    color: "1A1A2E"
+    color: "#1A1A2E"
 
     RowLayout {
         anchors.fill: parent
@@ -16,13 +16,16 @@ ApplicationWindow {
         spacing: 12
 
         VehicleList {
-            Layout.preferredwidth: 320
+            id: vehicleList
+            Layout.preferredWidth: 320
             Layout.fillHeight: true
         }
 
         StatusPanel {
             Layout.fillWidth: true
             Layout.fillHeight: true
+            // Direct binding to the alias — no signal handler needed
+            selectedIndex: vehicleList.selectedIndex
         }
     }
 }

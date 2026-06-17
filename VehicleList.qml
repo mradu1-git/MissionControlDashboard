@@ -5,7 +5,7 @@ import QtQuick.Layouts
 Rectangle {
     color: "#16213E"
     radius: 10
-
+    property alias selectedIndex: listView.currentIndex
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 10

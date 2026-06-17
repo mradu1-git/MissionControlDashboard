@@ -12,6 +12,12 @@ int VehicleModel::rowCount(const QModelIndex& parent) const {
     return m_vehicles.size();
 }
 
+void VehicleModel::updateBattery(int index, double battery) {
+    if (index < 0 || index >= m_vehicles.size()) return;
+    m_vehicles[index]->setBattery(battery);
+    emit dataChanged(this->index(index), this->index(index), {BatteryRole});
+}
+
 QVariant VehicleModel::data(const QModelIndex &index, int role) const {
     if (!index.isValid() || index.row() >= m_vehicles.size()) {
         return QVariant();
